@@ -12,42 +12,35 @@ Showings.init(
         autoIncrement: true,
     },
     times: {
-        type: DataTypes.STRING,
+        type: DataTypes.TIME,
         allowNull: false,
     },
-    description: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    run_time: {
+    tickets_available: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        isNumeric: true,
+    },
+    ticket_cost: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+        isDecimal: true,
 
     },
-    reviews: {
+    movie_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'reviews',
+            model: 'movies',
             key: 'id'
         }
     },
-    genre: {
-        type: DataTypes.INTEGER,
-        references: {
-            mode: 'genres',
-            key: 'id'
-        }
-    },
+
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         undeerscored: true,
-        modelName: 'movies'
+        modelName: 'showings'
     }
 
 );
-
-module.exports = Movies
+module.exports = Showings
