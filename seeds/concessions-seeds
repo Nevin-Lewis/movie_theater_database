@@ -80,14 +80,12 @@ const productData = [
     stock: 35,
     category_id: 4,
   },
-
   {
     product_name: 'Raisinettes',
     price: 5.50,
     stock: 20,
     category_id: 4,
   },
-
   {
     product_name: 'Chocolate Covered Cookie Dough',
     price: 6.50,
