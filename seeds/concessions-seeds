@@ -73,7 +73,6 @@ const productData = [
     stock: 35,
     category_id: 4,
   },
-
   {
     product_name: 'Sour Patch Kids',
     price: 6.50,
