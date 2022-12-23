@@ -40,4 +40,4 @@ Reviews.init(
 
 );
 
-module.exports = Reviews
+module.exports = Reviews;

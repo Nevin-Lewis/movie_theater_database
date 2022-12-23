@@ -44,4 +44,4 @@ Concessions.init(
 
 );
 
-module.exports = Concessions
+module.exports = Concessions;
