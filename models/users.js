@@ -41,4 +41,4 @@ Users.init(
 
 );
 
-module.exports = Users
+module.exports = Users;

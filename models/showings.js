@@ -43,4 +43,4 @@ Showings.init(
     }
 
 );
-module.exports = Showings
+module.exports = Showings;
