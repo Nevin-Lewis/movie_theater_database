@@ -26,4 +26,4 @@ Genres.init(
 
 );
 
-module.exports = Genres
+module.exports = Genres;

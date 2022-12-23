@@ -50,4 +50,4 @@ Movies.init(
 
 );
 
-module.exports = Movies
+module.exports = Movies;
