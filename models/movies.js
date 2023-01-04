@@ -17,6 +17,13 @@ Movies.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
+      genre: {
+        type: DataTypes.INTEGER,
+        references: {
+          mode: 'genres',
+          key: 'id',
+        },
+      },
       description: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -31,13 +38,6 @@ Movies.init(
         type: DataTypes.INTEGER,
         references: {
           model: 'reviews',
-          key: 'id',
-        },
-      },
-      genre: {
-        type: DataTypes.INTEGER,
-        references: {
-          mode: 'genres',
           key: 'id',
         },
       },
