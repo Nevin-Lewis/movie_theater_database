@@ -1,4 +1,4 @@
-const {conCat} = require('../models');
+const { conCat } = require('../models');
 
 const categoryData = [
   {
@@ -15,6 +15,6 @@ const categoryData = [
   },
 ];
 
-const seedConcessions = () => conCat.bulkCreate(categoryData);
+const seedConcessions = () => Category.bulkCreate(categoryData);
 
 module.exports = seedConcessions;
