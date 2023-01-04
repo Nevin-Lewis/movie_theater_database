@@ -30,11 +30,19 @@ Movies.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         isNumeric: true,
-    },
-    reviews: {
+
+      },
+      review_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'reviews',
+          key: 'id',
+        },
+      },
+      genre_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          mode: 'genres',
           key: 'id',
         },
       },

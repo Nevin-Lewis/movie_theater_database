@@ -1,43 +1,68 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connections');
+const {Model, DataTypes} = require('sequelize');
+const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
-class Users extends Model {}
+
+/**  adding user page */
+class Users extends Model {
+  checkPassword(loginPW) {
+      return bcrypt.compareSync(loginPW, this.password);
+  }
+}
 
 Users.init(
     {
-    id: {
+      id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
         primaryKey: true,
-    },
-    name: {
+      },
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    email: {
+      },
+      email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
         validate: {
-            isEmail: true,
+          isEmail: true,
         },
-    },
-    password: {
+      },
+      password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            len:[10],
+          len: [10],
         },
-    }
+      },
+      movie_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'movies',
+          key: 'id',
+        },
+      },
     },
     {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'users'
-    }
+      hooks: {
+        beforeCreate: async (newUserData) => {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+          return newUserData;
+        },
+        beforeUpdate: async (updatedUserData) => {
+          // eslint-disable-next-line max-len
+          updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+          return updatedUserData;
+        },
+      },
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'users',
+    },
 
 );
 
