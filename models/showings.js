@@ -1,46 +1,45 @@
-const { Model, DataTypes } = require('sequelize');
+const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connections');
 
+/** Adding a model for showing times
+*/
 class Showings extends Model {}
 
 Showings.init(
     {
-    id: {
+      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-    },
-    times: {
+      },
+      times: {
         type: DataTypes.TIME,
         allowNull: false,
-    },
-    tickets_available: {
+      },
+      tickets_available: {
         type: DataTypes.INTEGER,
         allowNull: false,
-    },
-    ticket_cost: {
+      },
+      ticket_cost: {
         type: DataTypes.DECIMAL,
         allowNull: false,
         isDecimal: true,
-
-    },
-    movie_id: {
+      },
+      movie_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'movies',
-            key: 'id'
-        }
-    },
-
+          model: 'movies',
+          key: 'id',
+        },
+      },
     },
     {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        undeerscored: true,
-        modelName: 'showings'
-    }
-
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      undeerscored: true,
+      modelName: 'showings',
+    },
 );
-module.exports = Showings
+module.exports = Showings;
