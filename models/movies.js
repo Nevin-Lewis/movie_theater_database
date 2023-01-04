@@ -14,7 +14,14 @@ Movies.init(
     title: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
+     },
+      genre: {
+        type: DataTypes.INTEGER,
+        references: {
+          mode: 'genres',
+          key: 'id',
+        },
+      },
     description: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -23,28 +30,20 @@ Movies.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         isNumeric: true,
-
     },
     reviews: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'reviews',
-            key: 'id'
-        }
-    },
-    genre: {
-        type: DataTypes.INTEGER,
-        references: {
-            mode: 'genres',
-            key: 'id'
-        }
-    },
+          model: 'reviews',
+          key: 'id',
+        },
+      },
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        undeerscored: true,
+        underscored: true,
         modelName: 'movies'
     }
 

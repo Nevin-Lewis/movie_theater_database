@@ -32,15 +32,12 @@ Showings.init(
             key: 'id'
         }
     },
-
-    },
     {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        undeerscored: true,
-        modelName: 'showings'
-    }
-
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'showings',
+    },
 );
 module.exports = Showings;

@@ -15,15 +15,13 @@ Genres.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    },
     {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        undeerscored: true,
-        modelName: 'genres'
-    }
-
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'genres',
+    },
 );
 
 module.exports = Genres;

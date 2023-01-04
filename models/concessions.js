@@ -33,15 +33,13 @@ Concessions.init(
             key: 'id'
         }
     },
-    },
     {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        undeerscored: true,
-        modelName: 'concessions'
-    }
-
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'concessions',
+    },
 );
 
 module.exports = Concessions;

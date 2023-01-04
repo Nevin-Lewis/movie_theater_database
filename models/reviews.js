@@ -29,15 +29,13 @@ Reviews.init(
             key: 'id'
         }
     },
-    },
     {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        undeerscored: true,
-        modelName: 'reviews'
-    }
-
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'reviews',
+    },
 );
 
 module.exports = Reviews;
