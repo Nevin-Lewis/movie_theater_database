@@ -46,7 +46,7 @@ Movies.init(
       sequelize,
       timestamps: false,
       freezeTableName: true,
-      undeerscored: true,
+      underscored: true,
       modelName: 'movies',
     },
 
