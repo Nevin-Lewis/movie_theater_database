@@ -1,19 +1,21 @@
-const { Model, DataTypes } = require('sequelize');
+const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connections');
 
+/** Added mdoel for Genres */
 class Genres extends Model {}
 
 Genres.init(
     {
-    id: {
+      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-    },
-    genre_name: {
+      },
+      genre_name: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
     },
     {
       sequelize,
