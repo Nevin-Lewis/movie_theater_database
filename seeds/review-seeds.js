@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-const {reviews} = require('../models');
+const { Reviews } = require('../models');
 
 const reviewsData = [
   {
@@ -59,7 +59,6 @@ const reviewsData = [
   },
 ];
 
-const seedReviews = () =>
-  reviews.bulkCreate(reviewsData, {individualHooks: true, returning: true});
+const seedReviews = () => Reviews.bulkCreate(reviewsData, {individualHooks: true, returning: true});
 
 module.exports = seedReviews;
