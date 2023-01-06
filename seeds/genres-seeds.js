@@ -1,4 +1,4 @@
-const {genre} = require('../models');
+const { Genre } = require('../models');
 
 const genreData = [
   {
@@ -15,7 +15,6 @@ const genreData = [
   },
 ];
 
-const seedGenres = () =>
-  genre.bulkCreate(genreData, {individualHooks: true, returning: true});
+const seedGenres = () => Genre.bulkCreate(genreData, {individualHooks: true, returning: true});
 
 module.exports = seedGenres;
