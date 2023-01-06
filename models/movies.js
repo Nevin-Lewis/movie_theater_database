@@ -12,6 +12,10 @@ Movies.init(
         primaryKey: true,
         autoIncrement: true,
       },
+      filename: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       title: {
         type: DataTypes.STRING,
         allowNull: false,
