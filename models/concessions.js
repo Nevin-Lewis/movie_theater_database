@@ -1,37 +1,39 @@
-const { Model, DataTypes } = require('sequelize');
+const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connections');
 
+
+/** Model for Concessions */
 class Concessions extends Model {}
 
 Concessions.init(
     {
-    id: {
+      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-    },
-    product_name: {
+      },
+      product_name: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    price: {
+      },
+      price: {
         type: DataTypes.DECIMAL,
         allowNull: false,
         isDecimal: true,
-    },
-    stock: {
+      },
+      stock: {
         type: DataTypes.INTEGER,
         allowNull: false,
         isNumeric: true,
-
-    },
-    category_id: {
+      },
+      category_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'categories',
-            key: 'id'
-        }
+          model: 'categories',
+          key: 'id',
+        },
+      },
     },
     {
       sequelize,
@@ -41,5 +43,4 @@ Concessions.init(
       modelName: 'concessions',
     },
 );
-
 module.exports = Concessions;
