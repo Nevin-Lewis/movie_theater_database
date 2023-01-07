@@ -1,0 +1,14 @@
+{{!-- {{#if loggedIn}} --}}
+<section class="movie">
+  <img src="/images/{{movies.filename}}">
+  <div class="movie-details">
+    <h3>{{movies.title}}</h3>
+    <p>Length: {{movies.run_time}}</p>
+    {{#each movies.reviews as |review|}}
+    {{> review-details}}
+    {{/each}}
+  </div>
+</section>
+{{!-- {{else}}
+<a href="/login">Please login to see the movies!</a>
+{{/if}} --}}

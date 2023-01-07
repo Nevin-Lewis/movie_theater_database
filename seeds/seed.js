@@ -1,4 +1,4 @@
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 const seedconCat = require('./conCat-seeds');
 const seedConcessions = require('./concessions-seeds');
 const seedMovies = require('./movies-seeds');
@@ -8,11 +8,14 @@ const seedUsers = require('./users-seeds');
 
 const seedAll = async () => {
   await sequelize.sync({force: true});
-  await seedConcessions();
+
+  await seedUsers();
   await seedGenres();
   await seedMovies();
   await seedReviews();
-  await seedUsers();
   await seedconCat();
+  await seedConcessions();
+
+  process.exit(0);
 };
 seedAll();

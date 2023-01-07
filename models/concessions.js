@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
 
 /** Model for Concessions */
@@ -30,7 +30,7 @@ Concessions.init(
       category_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'categories',
+          model: 'category',
           key: 'id',
         },
       },
