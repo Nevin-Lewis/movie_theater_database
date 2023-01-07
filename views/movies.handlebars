@@ -1,43 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="/movies">Movies</a></li>
-            <li><a href="/snacks">Snacks</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/Login">Logout</a></li>
-        </ul>
-    </nav>
-    <section>
-        <h1>Movies</h1>
-        
-            <div>
-                <img src="{{Movies.poster}}" alt="{{Movies.name}}">
-                <a href="/showings">{{Movies.name}}</a>
-            </div>
-            <div>
-                <img src="{{Movies.poster}}" alt="{{Movies.name}}">
-                <a href="/showings">{{Movies.name}}</a>
-            </div>
-            <div>
-                <img src="{{Movies.poster}}" alt="{{Movies.name}}">
-                <a href="/showings">{{Movies.name}}</a>
-            </div>
-            <div>
-                <img src="{{Movies.poster}}" alt="{{Movies.name}}">
-                <a href="/showings">{{Movies.name}}</a>
-            </div>
-            <div>
-                <img src="{{Movies.poster}}" alt="{{Movies.name}}">
-                <a href="/showings">{{Movies.name}}</a>
-            </div>
-    </section>
-</body>
-</html>
+{{#if loggedIn}}
+<section class="movie">
+  <img src="/images/{{movie.filename}}" alt="{{movie.description}}">
+  <div class="movie-details">
+    <h3>{{movie.title}}</h3>
+    <p>Directed By: {{movie.director}}</p>
+  </div>
+</section>
+{{else}}
+<a href="/login">Please login to see the movies!</a>
+{{/if}}
