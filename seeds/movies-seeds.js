@@ -1,4 +1,5 @@
-const { Movies } = require('../models');
+/* eslint-disable max-len */
+const {Movies} = require('../models');
 
 const moviesData = [
   {

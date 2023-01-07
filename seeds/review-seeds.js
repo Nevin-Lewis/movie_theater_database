@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-const { Reviews } = require('../models');
+const {Reviews} = require('../models');
 
 const reviewsData = [
   {
