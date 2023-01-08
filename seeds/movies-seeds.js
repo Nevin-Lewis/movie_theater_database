@@ -46,7 +46,7 @@ const moviesData = [
     run_time: '2H 14',
   },
   {
-    filename: 'The_banshees.jpg',
+    filename: 'Banshees.jpg',
     title: 'Banshees of Inishierin',
     genre_id: 2,
     description: 'On a remote island off the coast of Ireland, Pádraic is devastated when his buddy Colm suddenly puts an end to their lifelong friendship. With help from his sister and a troubled young islander, Pádraic sets out to repair the damaged relationship by any means necessary. However, as Colm\'s resolve only strengthens, he soon delivers an ultimatum that leads to shocking consequences.',

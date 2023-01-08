@@ -69,7 +69,7 @@ nav a:hover {
 .genre {
   flex: 4;
   background-color: #fff;
-  padding: 50px;
+  padding: 2%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -93,7 +93,7 @@ img {
 }
 
 .movie {
-  width: 50%;
+  width: 75%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
@@ -101,7 +101,7 @@ img {
 
 .movie-details {
   text-align: center;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   font-weight: bold;
 }
 
@@ -139,7 +139,7 @@ img {
 }
 
 .card-body {
-  font-size: 1.4rem;
+  font-size: 1rem;
   text-align: center;
   font-weight: bold;
 }
