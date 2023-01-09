@@ -2,14 +2,12 @@ const {Model, DataTypes} = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-/** Adding a model for concession categories */
-class conCat extends Model {};
 
-// model below is for the Concession Categories
+/** Added model for concession categoires */
+class conCat extends Model {}
 
 conCat.init(
-    {
-      // Defining ID
+    {// Defining ID
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -30,5 +28,4 @@ conCat.init(
       modelName: 'category',
     },
 );
-
 module.exports = conCat;

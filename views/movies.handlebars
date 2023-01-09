@@ -1,0 +1,11 @@
+{{#if loggedIn}}
+<section class="movie">
+  <img src="/images/{{movie.filename}}" alt="{{movie.description}}">
+  <div class="movie-details">
+    <h3>{{movie.title}}</h3>
+    <p>Directed By: {{movie.director}}</p>
+  </div>
+</section>
+{{else}}
+<a href="/login">Please login to see the movies!</a>
+{{/if}}

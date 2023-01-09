@@ -1,7 +1,7 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connections');
 
-/** Adds movel for user reviews */
+/** Add model for reviews */
 class Reviews extends Model {}
 
 Reviews.init(
@@ -35,10 +35,9 @@ Reviews.init(
       sequelize,
       timestamps: false,
       freezeTableName: true,
-      undeerscored: true,
+      underscored: true,
       modelName: 'reviews',
     },
-
 );
 
 module.exports = Reviews;
