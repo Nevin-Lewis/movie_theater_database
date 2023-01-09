@@ -1,6 +1,6 @@
 // eslint-disable-next-line new-cap
 const router = require('express').Router();
-const {Movies, Reviews, Genres} = require('../models');
+const {Movies, Reviews, Genres, Showings, Concessions} = require('../models');
 const withAuth = require('../utils/auth');
 // GET all genres for homepage
 router.get('/', async (req, res) => {
@@ -16,12 +16,20 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
+    const dbSnackData = await Concessions.findAll({
+      where: {
+        category_id: [1, 2, 3],
+      },
+    });
+    const snacks = dbSnackData.map((snacks) =>
+      snacks.get({plain: true}),
+    );
     const genres = dbGenreData.map((genres) =>
       genres.get({plain: true}),
     );
     res.render('homepage', {
       genres,
+      snacks,
       loggedIn: req.session.loggedIn});
   } catch (err) {
     console.log(err);
@@ -74,6 +82,14 @@ router.get('/movie/:id', withAuth, async (req, res) => {
               'review',
               'movie_id',
               'id',
+            ],
+          },
+          {
+            model: Showings,
+            attributes: [
+              'times',
+              'tickets_available',
+              'ticket_cost',
             ],
           },
         ],

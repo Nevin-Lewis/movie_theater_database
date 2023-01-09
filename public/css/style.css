@@ -44,8 +44,8 @@ main {
 aside {
   flex: 0;
   background-color: var(--tertiary);
-  padding: 80px;
-  text-align: left;
+  padding: 20px;
+  text-align: center;
   color: var(--light);
 }
 
@@ -114,7 +114,49 @@ img {
   background-color: var(--light);
   color: var(--dark);
 }
+.movie-card {
+  padding: 10px;
+  margin: 2px;
+  flex: 0 1 30px;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+  background-color: var(--light);
+  color: var(--dark);
+  
+}
 
+.movie-card header {
+  color: var(--light);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  background-color: var(--tertiary);
+  padding: 2px;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.snack-card p {
+  margin-bottom: 0;
+}
+.snack-card {
+  padding: 2px;
+  margin: 1px 1px;
+  flex: 0 1 30px;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+  background-color: var(--light);
+  color: var(--dark);
+  
+}
+.snack-card header {
+  color: var(--light);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  background-color: var(--tertiary);
+  padding: 2px;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;

@@ -30,12 +30,12 @@ Movies.hasMany(Reviews, {
 Reviews.belongsTo(Movies, {
   foreignKey: 'movie_id',
 });
-// Movies.hasMany(Showings, {
-//   foreignKey: 'movie_id',
-// });
-// Showings.belongsTo(Movies, {
-//   foreignKey: 'movie_id',
-// });
+Movies.hasMany(Showings, {
+  foreignKey: 'movie_id',
+});
+Showings.belongsTo(Movies, {
+  foreignKey: 'movie_id',
+});
 // Users.hasMany(Reviews, {
 //   foreignKey: 'user_id',
 // });
