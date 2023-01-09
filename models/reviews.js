@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
 /** Add model for reviews */
 class Reviews extends Model {}
@@ -24,7 +24,7 @@ Reviews.init(
         },
       },
       user_id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         references: {
           model: 'users',
           key: 'id',

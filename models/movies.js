@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
 /** Added model for movies */
 class Movies extends Model {}
@@ -21,20 +21,14 @@ Movies.init(
         allowNull: false,
       },
       description: {
-        type: DataTypes.STRING,
+        // eslint-disable-next-line new-cap
+        type: DataTypes.TEXT('long'),
         allowNull: false,
       },
       run_time: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
         isNumeric: true,
-      },
-      review_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'reviews',
-          key: 'id',
-        },
       },
       genre_id: {
         type: DataTypes.INTEGER,
