@@ -13,7 +13,7 @@ const moviesData = [
     filename: 'Everything_everywhere.jpg',
     title: 'Everything Everywhere All at Once',
     genre: 1,
-    description: 'When an inter-dimensional rupture unravels reality, an unlikely hero must channel her newfund powers to fight bizarre and bewildering dangers from the multiverse as the fate of the world hangs in the balance.',
+    description: 'When an inter-dimensional rupture unravels reality, an unlikely hero must channel her newfound powers to fight bizarre and bewildering dangers from the multiverse as the fate of the world hangs in the balance.',
     run_time: '2H 19M',
     reviews: '',
   },

@@ -18,7 +18,7 @@ const userData = [
   },
   {
     name: 'Dana Carvey',
-    email: 'PartyOnWayne@WWPTE.com',
+    email: 'PartyOnWayne@wwpte.com',
     password: 'password123',
   },
 ];

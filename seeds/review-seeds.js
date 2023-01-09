@@ -57,6 +57,31 @@ const reviewsData = [
     movie_id: 8,
     user_id: 3,
   },
+  {
+    review: 'Smile!? More like BIG FROWN. Too creepy for me!',
+    movie_id: 9,
+    user_id: 3,
+  },
+  {
+    review: 'Northman is one of best films I watched all year! The story of Norse mythology that it tells really gripped me.  And there was some really amazing performances from the whole cast. Must Watch!',
+    movie_id: 4,
+    user_id: 4,
+  },
+  {
+    review: '...Ultimately, Prey for the Devil is a very hammy movie that almost feels like it was made in the 80s. It was fine, sort of nostalgic, but not something to write home about.',
+    movie_id: 10,
+    user_id: 1,
+  },
+  {
+    review: 'X DOES NOT MARK THE SPOT! ALL PAWS ON THE GROUND. IT WAS RUFF!',
+    movie_id: 11,
+    user_id: 2,
+  },
+  {
+    review: 'Thank god I did not pay for it. Hereditary is a movie that did not need to be made. Of course, no movie ever needs to be made, but Hereditary is a movie that really did not need to be made, more so than other movies that have been made.',
+    movie_id: 12,
+    user_id: 1,
+  },
 ];
 
 const seedReviews = () => Reviews.bulkCreate(reviewsData, {individualHooks: true, returning: true});
