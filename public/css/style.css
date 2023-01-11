@@ -114,6 +114,16 @@ img {
   background-color: var(--light);
   color: var(--dark);
 }
+.review-card {
+  margin: 20px;
+  flex: 0 1 300px;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+  background-color: var(--light);
+  color: var(--dark);
+  align-content: center;
+  justify-content: center;
+}
 .movie-card {
   padding: 10px;
   margin: 2px;
