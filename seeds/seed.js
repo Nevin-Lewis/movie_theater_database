@@ -13,7 +13,7 @@ const seedAll = async () => {
   await seedUsers();
   await seedGenres();
   await seedMovies();
-  // await seedReviews();
+  await seedReviews();
   await seedconCat();
   await seedConcessions();
   await seedTimes();
