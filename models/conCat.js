@@ -15,7 +15,7 @@ conCat.init(
         autoIncrement: true,
       },
       // Defining category_name
-      category_name: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
