@@ -1,18 +1,22 @@
 // eslint-disable-next-line new-cap
-const router = require('express').Router();
-const {Movies, Reviews, Genres, Showings, Concessions} = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const {
+  Movies,
+  Reviews,
+  Genres,
+  Showings,
+  Concessions,
+  Users,
+} = require("../models");
+const withAuth = require("../utils/auth");
 // GET all genres for homepage
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const dbGenreData = await Genres.findAll({
       include: [
         {
           model: Movies,
-          attributes: [
-            'id',
-            'filename',
-          ],
+          attributes: ["id", "filename"],
         },
       ],
     });
@@ -21,16 +25,13 @@ router.get('/', async (req, res) => {
         category_id: [1, 2, 3],
       },
     });
-    const snacks = dbSnackData.map((snacks) =>
-      snacks.get({plain: true}),
-    );
-    const genres = dbGenreData.map((genres) =>
-      genres.get({plain: true}),
-    );
-    res.render('homepage', {
+    const snacks = dbSnackData.map((snacks) => snacks.get({ plain: true }));
+    const genres = dbGenreData.map((genres) => genres.get({ plain: true }));
+    res.render("homepage", {
       genres,
       snacks,
-      loggedIn: req.session.loggedIn});
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -38,9 +39,9 @@ router.get('/', async (req, res) => {
 });
 
 // GET one genre
-router.get('/genres/:id', withAuth, async (req, res) => {
+router.get("/genres/:id", withAuth, async (req, res) => {
   if (!req.session.loggedIn) {
-    res.redirect('/login');
+    res.redirect("/login");
   } else {
     try {
       const dbGenreData = await Genres.findByPk(req.params.id, {
@@ -48,19 +49,20 @@ router.get('/genres/:id', withAuth, async (req, res) => {
           {
             model: Movies,
             attributes: [
-              'id',
-              'filename',
-              'title',
-              'genre_id',
-              'description',
-              'run_time',
+              "id",
+              "filename",
+              "title",
+              "genre_id",
+              "description",
+              "run_time",
             ],
           },
         ],
       });
 
-      const genres = dbGenreData.get({plain: true});
-      res.render('genre', {genres, loggedIn: req.session.loggedIn});
+      const genres = dbGenreData.get({ plain: true });
+      res.render("genre", { genres, loggedIn: req.session.loggedIn });
+      console.log(req.params["end"]);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -69,34 +71,36 @@ router.get('/genres/:id', withAuth, async (req, res) => {
 });
 
 // GET one movie
-router.get('/movie/:id', withAuth, async (req, res) => {
+router.get("/movie/:id", withAuth, async (req, res) => {
   if (!req.session.loggedIn) {
-    res.redirect('/login');
+    res.redirect("/login");
   } else {
     try {
       const dbMovieData = await Movies.findByPk(req.params.id, {
         include: [
           {
-            model: Reviews,
-            attributes: [
-              'review',
-              'movie_id',
-              'id',
-            ],
-          },
-          {
-            model: Showings,
-            attributes: [
-              'times',
-              'tickets_available',
-              'ticket_cost',
-            ],
+            all: true,
+            nested: true,
           },
         ],
+        // include: [
+        //   {
+        //     model: Reviews,
+        //     attributes: ["review", "movie_id", "id", "user_id"],
+        //   },
+        //   {
+        //     model: Showings,
+        //     attributes: ["times", "tickets_available", "ticket_cost"],
+        //   },
+        // ],
       });
 
-      const movies = dbMovieData.get({plain: true});
-      res.render('movie', {movies, loggedIn: req.session.loggedIn});
+      const movies = dbMovieData.get({ plain: true });
+      res.render("movie", {
+        movies,
+        loggedIn: req.session.loggedIn,
+        id: req.params.id,
+      });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -105,12 +109,12 @@ router.get('/movie/:id', withAuth, async (req, res) => {
 });
 
 // Login route
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
 
 module.exports = router;

@@ -6,7 +6,7 @@
     {{/each}}
     </aside>
         <div class="genre">
-<section class="movie">
+<section class="movie" data-movie_id={{id}}>
   <img src="/images/{{movies.filename}}">
   <div class="movie-details">
     <h3>{{movies.title}}</h3>
@@ -22,16 +22,14 @@
    <div class="review-card">
     <header> Add your review below</header>
         <label for="name-signup"> </label>
-        <input class="form-input" type="text" id="review-signup" />
-        {{!-- <input class="input" type="text" id="review-name" /> --}}
-        <button class="btn btn-primary" id="review-submit" type="submit">Add review</button>
-      </div>
-      </form>
+        <input class="review-signup" type="text" id="review-signup" name="review-signup"/>
+        <button class="btn btn-primary" type="submit">Add review</button>
+    </div>
+  </form>
 </div>
-      
-
 </section>
 </div>
+<script src="/js/review.js"></script>
 {{else}}
 <a href="/login">Please login to see the movies!</a>
 {{/if}}
