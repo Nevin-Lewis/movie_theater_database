@@ -1,0 +1,22 @@
+{
+  "name": "movie_theater_database",
+  "version": "1.0.0",
+  "description": "This is a functional movie theater database where the user can view current movies and leave reviews or comments on the movies. The user is able to see a list of trending movies and sort them by genre. From there, they are able to choose a movie and view the runtime, director, and description of the movie. They can then scroll down and see a list of comments by other users. This application includes a login system to display the user's past comments and any movie recommendations as well.",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nevin-Lewis/movie_theater_database.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nevin-Lewis/movie_theater_database/issues"
+  },
+  "homepage": "https://github.com/Nevin-Lewis/movie_theater_database#readme"
+}
