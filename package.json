@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "description": "This is a functional movie theater database where the user can view current movies and leave reviews or comments on the movies. The user is able to see a list of trending movies and sort them by genre. From there, they are able to choose a movie and view the runtime, director, and description of the movie. They can then scroll down and see a list of comments by other users. This application includes a login system to display the user's past comments and any movie recommendations as well.",
   "main": "server.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.1.0",
+    "sequelize": "^6.28.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
