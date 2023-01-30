@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This is the movie theatre database for UT project #2",
   "main": "server.js",
-  "devDependencies": {
+  "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
