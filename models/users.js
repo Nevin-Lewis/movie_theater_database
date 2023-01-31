@@ -5,8 +5,9 @@ const bcrypt = require('bcrypt');
 
 /**  adding user page */
 class Users extends Model {
+  // eslint-disable-next-line require-jsdoc
   checkPassword(loginPW) {
-      return bcrypt.compareSync(loginPW, this.password);
+    return bcrypt.compareSync(loginPW, this.password);
   }
 }
 
@@ -37,13 +38,13 @@ Users.init(
           len: [10],
         },
       },
-      movie_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'movies',
-          key: 'id',
-        },
-      },
+      // movie_id: {
+      //   type: DataTypes.INTEGER,
+      //   references: {
+      //     model: 'movies',
+      //     key: 'id',
+      //   },
+      // },
     },
     {
       hooks: {

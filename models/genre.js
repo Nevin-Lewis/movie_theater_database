@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
 /** Added mdoel for Genres */
 class Genres extends Model {}
@@ -12,7 +12,7 @@ Genres.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      genre_name: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
