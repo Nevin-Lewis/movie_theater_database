@@ -21,10 +21,8 @@ async function main(user) {
     test: "This is the automated email you will recieve when you join",
     html: "<b> Welcome to movie time excelent. Enjoy your new account <b>",
   });
-  return (
-    console.log("preview URL", nodemailer.getTestMessageUrl(info)),
-    console.log("message sent,", info.messageId)
-  );
+  console.log("preview URL", nodemailer.getTestMessageUrl(info)),
+    console.log("message sent,", info.messageId);
 }
 main().catch(console.error);
 
