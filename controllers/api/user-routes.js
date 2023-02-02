@@ -1,9 +1,10 @@
 // eslint-disable-next-line new-cap
-const router = require('express').Router();
-const {Users} = require('../../models');
+const router = require("express").Router();
+const { Users } = require("../../models");
+const main = require("../../utils/email");
 
 // CREATE new user
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const dbUserData = await Users.create({
       name: req.body.name,
@@ -13,7 +14,8 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.user_id = dbUserData.id;
+      main(dbUserData.email);
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -23,7 +25,7 @@ router.post('/', async (req, res) => {
 });
 
 // Login
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const dbUserData = await Users.findOne({
       where: {
@@ -33,8 +35,8 @@ router.post('/login', async (req, res) => {
 
     if (!dbUserData) {
       res
-          .status(400)
-          .json({message: 'Incorrect email or password. Please try again!'});
+        .status(400)
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
@@ -42,8 +44,8 @@ router.post('/login', async (req, res) => {
 
     if (!validPassword) {
       res
-          .status(400)
-          .json({message: 'Incorrect email or password. Please try again!'});
+        .status(400)
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
@@ -52,8 +54,8 @@ router.post('/login', async (req, res) => {
       req.session.user_id = dbUserData.id;
 
       res
-          .status(200)
-          .json({user: dbUserData, message: 'You are now logged in!'});
+        .status(200)
+        .json({ user: dbUserData, message: "You are now logged in!" });
       // console.log({user: dbUserData, message: 'you are logged in'});
     });
   } catch (err) {
@@ -63,7 +65,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Logout
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
