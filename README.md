@@ -56,7 +56,7 @@ npm run seed
 ```
 npm start
 ```
-Open http://localhost:3001/
+Open http://localhost:3001/ or visit https://damp-ocean-89555.herokuapp.com/ 
 
 ## Contributing
 Feel free to copy, or fork this repo. Make any changes that you would like and use it freely. 
